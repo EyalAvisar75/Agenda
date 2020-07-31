@@ -8,10 +8,14 @@
 
 import UIKit
 
+//MARK: protocol TimeCollectionCellDelegate
 protocol TimeCollectionCellDelegate: class {
         func collectionView(collectionviewcell: TimeCollectionCell?, index: Int, didTappedInTableViewCell: MonthTableCell)
 
 }
+
+//MARK: extension
+
 extension MonthTableCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
 //    func updateCellWith(row: [CollectionViewCellModel]) {
@@ -19,6 +23,7 @@ extension MonthTableCell: UICollectionViewDelegate, UICollectionViewDataSource, 
 //        self.collectionView.reloadData()
 //    }
     
+    //MARK: extension UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 31
     }
@@ -37,18 +42,21 @@ extension MonthTableCell: UICollectionViewDelegate, UICollectionViewDataSource, 
         return UICollectionViewCell()
     }
     
+    //MARK: extension UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = calendarCollection.cellForItem(at: indexPath) as? TimeCollectionCell
         self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
 
     }
     
+    //MARK: extension UICollectionViewDelegateFlowLayout
     // Add spaces at the beginning and the end of the collection view
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
 }
 
+//MARK: class MonthTableCell
 class MonthTableCell: UITableViewCell {
 
     @IBOutlet var monthLabel:UILabel!

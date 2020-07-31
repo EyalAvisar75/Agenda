@@ -49,7 +49,8 @@ class MonthsTableController: UITableViewController, TimeCollectionCellDelegate {
     func collectionView(collectionviewcell: TimeCollectionCell?, index: Int, didTappedInTableViewCell: MonthTableCell) {
         
         let day = index + 1
-        print("you chose \(day)")
+        let month = didTappedInTableViewCell.monthLabel.text!
+        print("day \(day), month \(month)")
             
     }
 }
