@@ -21,6 +21,7 @@
 		183BF4B224D2E98E00DE2A90 /* TimeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183BF4B024D2E98E00DE2A90 /* TimeCollectionCell.xib */; };
 		183BF4B424D2EAC000DE2A90 /* MonthsTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF4B324D2EAC000DE2A90 /* MonthsTableCellModel.swift */; };
 		183BF4B624D2EBD000DE2A90 /* TimeCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF4B524D2EBD000DE2A90 /* TimeCollectionCellModel.swift */; };
+		18CE536324D3F1F30098D827 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE536224D3F1F30098D827 /* MonthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		183BF4B024D2E98E00DE2A90 /* TimeCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionCell.xib; sourceTree = "<group>"; };
 		183BF4B324D2EAC000DE2A90 /* MonthsTableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsTableCellModel.swift; sourceTree = "<group>"; };
 		183BF4B524D2EBD000DE2A90 /* TimeCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionCellModel.swift; sourceTree = "<group>"; };
+		18CE536224D3F1F30098D827 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +117,9 @@
 				183BF4AD24D2E6F100DE2A90 /* MonthTableCell */,
 				183BF47324D2D97700DE2A90 /* AppDelegate.swift */,
 				183BF47524D2D97700DE2A90 /* SceneDelegate.swift */,
-				183BF47924D2D97700DE2A90 /* Main.storyboard */,
 				183BF4A724D2E68E00DE2A90 /* MonthsTableController.swift */,
+				18CE536224D3F1F30098D827 /* MonthViewController.swift */,
+				183BF47924D2D97700DE2A90 /* Main.storyboard */,
 				183BF47C24D2D9AE00DE2A90 /* Assets.xcassets */,
 				183BF47E24D2D9AE00DE2A90 /* LaunchScreen.storyboard */,
 				183BF48124D2D9AE00DE2A90 /* Info.plist */,
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				183BF47424D2D97700DE2A90 /* AppDelegate.swift in Sources */,
+				18CE536324D3F1F30098D827 /* MonthViewController.swift in Sources */,
 				183BF4B424D2EAC000DE2A90 /* MonthsTableCellModel.swift in Sources */,
 				183BF4B124D2E98E00DE2A90 /* TimeCollectionCell.swift in Sources */,
 				183BF4AB24D2E6E200DE2A90 /* MonthTableCell.swift in Sources */,

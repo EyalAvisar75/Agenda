@@ -11,7 +11,7 @@ import UIKit
 
 class MonthsTableController: UITableViewController, TimeCollectionCellDelegate {
 
-    let months = ["January", "February", "March", "April", "May", "June", "July", "Augost", "September", "October", "November", "December"]
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

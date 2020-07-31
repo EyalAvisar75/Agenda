@@ -63,8 +63,6 @@ class MonthTableCell: UITableViewCell {
     @IBOutlet var calendarCollection:UICollectionView!
     
     weak var cellDelegate: TimeCollectionCellDelegate?
-
-    var row:[TimeCollectionCellModel]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
