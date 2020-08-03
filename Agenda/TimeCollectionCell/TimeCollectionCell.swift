@@ -11,6 +11,7 @@ import UIKit
 class TimeCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var dayLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
