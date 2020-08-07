@@ -10,22 +10,17 @@ import UIKit
 
 //MARK: protocol TimeCollectionCellDelegate
 protocol TimeCollectionCellDelegate: class {
-        func collectionView(collectionviewcell: TimeCollectionCell?, index: Int, didTappedInTableViewCell: MonthTableCell)
+        func collectionView(collectionviewcell: DayCollectionCell?, index: Int, didTappedInTableViewCell: TimeTableCell)
 
 }
 
 //MARK: extension
 
-extension MonthTableCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-//    func updateCellWith(row: [CollectionViewCellModel]) {
-//        self.rowWithColors = row
-//        self.collectionView.reloadData()
-//    }
+extension TimeTableCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //MARK: extension UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 31
+        return TimeUnit.unit
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -34,9 +29,33 @@ extension MonthTableCell: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     // Set the data for each cell (color and color name)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as? TimeCollectionCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as? DayCollectionCell {
             
-            cell.dayLabel.text = "\(indexPath.row + 1)"
+            let currentFirstDay = getFirstDayOfMonth(requiredMonth: currentMonth, requiredYear: currentYear)
+                     
+            //ToDo no day 0!
+            if TimeUnit.unit == 7 {
+                cell.dayLabel.text = "\((currentWeekDay + indexPath.row) % currentLastDay)"
+                if indexPath.row == 0 {
+                    cell.dayLabel.backgroundColor = .yellow
+                }
+                return cell
+            }
+            if indexPath.row < currentFirstDay {
+                cell.isHidden = true
+            }
+            
+            //ToDo for some reason i need that... and the months are not coordinated well february shows up in november??!!
+            if indexPath.row + 1 - currentFirstDay > currentLastDay {
+                cell.isHidden = true
+            }
+            cell.dayLabel.text = "\(indexPath.row + 1 - currentFirstDay)"
+            if (indexPath.row + 1 - currentFirstDay) == day {
+                if currentYear == year && currentMonth == month {
+                    cell.backgroundColor = .green
+                }
+            }
+            
             return cell
         }
         return UICollectionViewCell()
@@ -44,7 +63,7 @@ extension MonthTableCell: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     //MARK: extension UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = calendarCollection.cellForItem(at: indexPath) as? TimeCollectionCell
+        let cell = calendarCollection.cellForItem(at: indexPath) as? DayCollectionCell
         self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
 
     }
@@ -57,7 +76,7 @@ extension MonthTableCell: UICollectionViewDelegate, UICollectionViewDataSource, 
 }
 
 //MARK: class MonthTableCell
-class MonthTableCell: UITableViewCell {
+class TimeTableCell: UITableViewCell {
 
     @IBOutlet var monthLabel:UILabel!
     @IBOutlet var calendarCollection:UICollectionView!
@@ -73,13 +92,13 @@ class MonthTableCell: UITableViewCell {
         flowLayout.minimumLineSpacing = 2.0
         flowLayout.minimumInteritemSpacing = 5.0
         calendarCollection.collectionViewLayout = flowLayout
-//        calendarCollection.showsHorizontalScrollIndicator = false
+
         
         calendarCollection.dataSource = self
         calendarCollection.delegate = self
                
                // Register the xib for collection view cell
-        let cellNib = UINib(nibName: "TimeCollectionCell", bundle: nil)
+        let cellNib = UINib(nibName: "DayCollectionCell", bundle: nil)
         calendarCollection.register(cellNib, forCellWithReuseIdentifier: "DayCell")
            
 

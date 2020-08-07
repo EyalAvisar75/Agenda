@@ -14,19 +14,73 @@ class AlertSettingsTableController: UITableViewController {
     
     @IBOutlet weak var endDatePicker: UIDatePicker!
     
-
+    @IBOutlet weak var startAlertLabel: UILabel!
+        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         startDatePicker.isHidden = true
         endDatePicker.isHidden = true
+        startAlertLabel.text = "\(Calendar.current.monthSymbols[currentMonth]) \(currentWeekDay), \(currentYear) 6:00 PM"
     }
     
+    //MARK: alert building functions
+    @IBAction func startAlert(_ sender: UIDatePicker) {
+        print("print \(sender.date)")
+
+        if alert == nil {
+            alert = MyAlert()
+            alert?.startTime = sender.date
+        }
+        else {
+            alert?.startTime = sender.date
+        }
+        alert?.printAlert()
+    }
+    
+    @IBAction func endAlert(_ sender: UIDatePicker) {
+        print("print \(sender.date)")
+
+        if alert == nil {
+            alert = MyAlert()
+            alert?.endTime = sender.date
+        }
+        else {
+            alert?.endTime = sender.date
+        }
+        alert?.printAlert()
+    }
+    
+    
+    @IBAction func getEventName(_ sender: UITextField) {
+        if alert == nil {
+            alert = MyAlert()
+            alert?.eventName = sender.text
+        }
+        else {
+            alert?.eventName = sender.text
+        }
+        alert?.printAlert()
+        print(alert?.eventName!)
+    }
+    
+    @IBAction func showAlarm(_ sender: Any) {
+        guard let alarmController = storyboard?.instantiateViewController(withIdentifier: "AlarmTable") else { return }
+        navigationController?.pushViewController(alarmController, animated: true)
+    }
+
+    func showRepeatTable() {
+        guard let repeatController = storyboard?.instantiateViewController(withIdentifier: "RepeatTable") else { return }
+        navigationController?.pushViewController(repeatController, animated: true)
+    }
+    
+    func showEndRepeatTable() {
+        guard let endRepeatController = storyboard?.instantiateViewController(withIdentifier: "EndRepeatTable") else { return }
+        navigationController?.pushViewController(endRepeatController, animated: true)
+    }
+    
+    //MARK: table view data source and delegate
     override func tableView(_ tableView: UITableView,
                             heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row != 2 && indexPath.row != 4 {
@@ -66,11 +120,20 @@ class AlertSettingsTableController: UITableViewController {
             }
         }
         
+        if indexPath.row == 5 {
+            showRepeatTable()
+            return
+        }
+        
+        if indexPath.row == 6 {
+            showEndRepeatTable()
+            return
+        }
+        
         if indexPath.row != 1 && indexPath.row != 3 {
             endDatePicker.isHidden = true
             startDatePicker.isHidden = true
         }
-        
         self.tableView.reloadData()
     }
     

@@ -10,15 +10,22 @@ import UIKit
 
 
 class MonthsTableController: UITableViewController, TimeCollectionCellDelegate {
-
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UINib(nibName: "MonthTableCell", bundle: nil), forCellReuseIdentifier: "MonthCell")
+        //ToDo: why should i subtract 2 years? problem started with indicating year change in cell creation - months are not aligned. using two methods in Time.swift (Calendar, Date) is that the source?
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "\(year - 2)", style: .plain, target: self, action: #selector(showWeek))
+        tableView.register(UINib(nibName: "TimeTableCell", bundle: nil), forCellReuseIdentifier: "MonthCell")
+        print("m \(month), \(currentMonth), \(currentFirstDay), \(currentYear)")
     }
-
+    
+    @objc func showWeek() {
+        guard let weekcontroller = storyboard?.instantiateViewController(withIdentifier: "WeekControler") else { return }
+        
+//        present(weekcontroller, animated: true)
+        navigationController?.pushViewController(weekcontroller, animated: true)
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -27,16 +34,32 @@ class MonthsTableController: UITableViewController, TimeCollectionCellDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return months.count
+        return 10000
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MonthCell", for: indexPath) as! MonthTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MonthCell", for: indexPath) as! TimeTableCell
+
+        currentMonth  = (month + indexPath.row) % 12
+        currentYear = Int(navigationItem.leftBarButtonItem!.title!)! + 2
+        currentLastDay = getLastDayOfMonth(requiredMonth: currentMonth % 12, requiredYear: currentYear)
+        currentFirstDay = getFirstDayOfMonth(requiredMonth: currentYear, requiredYear: currentYear)
+        
+        print("days \(currentLastDay), first \(currentFirstDay) year \(currentYear), month \(currentMonth) row \(indexPath.row)")
+        TimeUnit.unit = currentLastDay + currentFirstDay
 
         cell.cellDelegate = self
-        cell.monthLabel.text = "\(months[indexPath.row])"
+        if currentMonth == 0  {
+            if indexPath.row != 0 {
+                let year = Int(navigationItem.leftBarButtonItem!.title!)! + 1
+                navigationItem.leftBarButtonItem?.title = "\(year)"
+                currentYear = year
+            }
+        }
+
+        let monthLabelText = Calendar.current.monthSymbols[currentMonth]
+        cell.monthLabel.text = monthLabelText
         return cell
     }
     
@@ -46,11 +69,12 @@ class MonthsTableController: UITableViewController, TimeCollectionCellDelegate {
 
     // MARK: - TimeCollectionCellDelegate
 
-    func collectionView(collectionviewcell: TimeCollectionCell?, index: Int, didTappedInTableViewCell: MonthTableCell) {
+    func collectionView(collectionviewcell: DayCollectionCell?, index: Int, didTappedInTableViewCell: TimeTableCell) {
         
         let day = index + 1
         let month = didTappedInTableViewCell.monthLabel.text!
-        print("day \(day), month \(month)")
-            
+        print("day \(day), month \(month)") //since i am moving the days according to day week on the first of the month - tap gives bad results
+        currentWeekDay = day
+        showWeek()
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimeCollectionCell: UICollectionViewCell {
+class DayCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var dayLabel: UILabel!
     

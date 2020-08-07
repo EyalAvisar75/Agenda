@@ -15,12 +15,16 @@
 		183BF48B24D2D9B400DE2A90 /* AgendaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF48A24D2D9B400DE2A90 /* AgendaTests.swift */; };
 		183BF49624D2D9B400DE2A90 /* AgendaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF49524D2D9B400DE2A90 /* AgendaUITests.swift */; };
 		183BF4A824D2E68E00DE2A90 /* MonthsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF4A724D2E68E00DE2A90 /* MonthsTableController.swift */; };
-		183BF4AB24D2E6E200DE2A90 /* MonthTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF4A924D2E6E200DE2A90 /* MonthTableCell.swift */; };
-		183BF4AC24D2E6E200DE2A90 /* MonthTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183BF4AA24D2E6E200DE2A90 /* MonthTableCell.xib */; };
-		183BF4B124D2E98E00DE2A90 /* TimeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF4AF24D2E98E00DE2A90 /* TimeCollectionCell.swift */; };
-		183BF4B224D2E98E00DE2A90 /* TimeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183BF4B024D2E98E00DE2A90 /* TimeCollectionCell.xib */; };
+		183BF4AB24D2E6E200DE2A90 /* TimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF4A924D2E6E200DE2A90 /* TimeTableCell.swift */; };
+		183BF4AC24D2E6E200DE2A90 /* TimeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183BF4AA24D2E6E200DE2A90 /* TimeTableCell.xib */; };
+		183BF4B124D2E98E00DE2A90 /* DayCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF4AF24D2E98E00DE2A90 /* DayCollectionCell.swift */; };
+		183BF4B224D2E98E00DE2A90 /* DayCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183BF4B024D2E98E00DE2A90 /* DayCollectionCell.xib */; };
 		18856A1924D6F6B8003206A0 /* AlertSettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18856A1824D6F6B8003206A0 /* AlertSettingsTableController.swift */; };
-		18CE536324D3F1F30098D827 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE536224D3F1F30098D827 /* MonthViewController.swift */; };
+		18A0C8BE24DBD0EF0017776A /* EndRepeatTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C8BD24DBD0EF0017776A /* EndRepeatTableController.swift */; };
+		18A0C8C024DBE6B50017776A /* RepeatTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C8BF24DBE6B50017776A /* RepeatTableController.swift */; };
+		18A0C8C224DBFC020017776A /* AlarmTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C8C124DBFC020017776A /* AlarmTableController.swift */; };
+		18CE536324D3F1F30098D827 /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE536224D3F1F30098D827 /* WeekViewController.swift */; };
+		18D44A6C24D7EB2400F00DBE /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D44A6B24D7EB2400F00DBE /* Time.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +59,16 @@
 		183BF49524D2D9B400DE2A90 /* AgendaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaUITests.swift; sourceTree = "<group>"; };
 		183BF49724D2D9B400DE2A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183BF4A724D2E68E00DE2A90 /* MonthsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsTableController.swift; sourceTree = "<group>"; };
-		183BF4A924D2E6E200DE2A90 /* MonthTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTableCell.swift; sourceTree = "<group>"; };
-		183BF4AA24D2E6E200DE2A90 /* MonthTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthTableCell.xib; sourceTree = "<group>"; };
-		183BF4AF24D2E98E00DE2A90 /* TimeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionCell.swift; sourceTree = "<group>"; };
-		183BF4B024D2E98E00DE2A90 /* TimeCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionCell.xib; sourceTree = "<group>"; };
+		183BF4A924D2E6E200DE2A90 /* TimeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCell.swift; sourceTree = "<group>"; };
+		183BF4AA24D2E6E200DE2A90 /* TimeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableCell.xib; sourceTree = "<group>"; };
+		183BF4AF24D2E98E00DE2A90 /* DayCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionCell.swift; sourceTree = "<group>"; };
+		183BF4B024D2E98E00DE2A90 /* DayCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCollectionCell.xib; sourceTree = "<group>"; };
 		18856A1824D6F6B8003206A0 /* AlertSettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSettingsTableController.swift; sourceTree = "<group>"; };
-		18CE536224D3F1F30098D827 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		18A0C8BD24DBD0EF0017776A /* EndRepeatTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndRepeatTableController.swift; sourceTree = "<group>"; };
+		18A0C8BF24DBE6B50017776A /* RepeatTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatTableController.swift; sourceTree = "<group>"; };
+		18A0C8C124DBFC020017776A /* AlarmTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableController.swift; sourceTree = "<group>"; };
+		18CE536224D3F1F30098D827 /* WeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
+		18D44A6B24D7EB2400F00DBE /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,14 +119,18 @@
 		183BF47224D2D97700DE2A90 /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
-				183BF4AE24D2E94100DE2A90 /* TimeCollectionCell */,
-				183BF4AD24D2E6F100DE2A90 /* MonthTableCell */,
+				183BF4AE24D2E94100DE2A90 /* DayCollectionCell */,
+				183BF4AD24D2E6F100DE2A90 /* TimeTableCell */,
 				183BF47324D2D97700DE2A90 /* AppDelegate.swift */,
 				183BF47524D2D97700DE2A90 /* SceneDelegate.swift */,
 				183BF4A724D2E68E00DE2A90 /* MonthsTableController.swift */,
-				18CE536224D3F1F30098D827 /* MonthViewController.swift */,
-				183BF47924D2D97700DE2A90 /* Main.storyboard */,
+				18CE536224D3F1F30098D827 /* WeekViewController.swift */,
 				18856A1824D6F6B8003206A0 /* AlertSettingsTableController.swift */,
+				18A0C8BF24DBE6B50017776A /* RepeatTableController.swift */,
+				18A0C8BD24DBD0EF0017776A /* EndRepeatTableController.swift */,
+				18A0C8C124DBFC020017776A /* AlarmTableController.swift */,
+				18D44A6B24D7EB2400F00DBE /* Time.swift */,
+				183BF47924D2D97700DE2A90 /* Main.storyboard */,
 				183BF47C24D2D9AE00DE2A90 /* Assets.xcassets */,
 				183BF47E24D2D9AE00DE2A90 /* LaunchScreen.storyboard */,
 				183BF48124D2D9AE00DE2A90 /* Info.plist */,
@@ -144,22 +156,22 @@
 			path = AgendaUITests;
 			sourceTree = "<group>";
 		};
-		183BF4AD24D2E6F100DE2A90 /* MonthTableCell */ = {
+		183BF4AD24D2E6F100DE2A90 /* TimeTableCell */ = {
 			isa = PBXGroup;
 			children = (
-				183BF4A924D2E6E200DE2A90 /* MonthTableCell.swift */,
-				183BF4AA24D2E6E200DE2A90 /* MonthTableCell.xib */,
+				183BF4A924D2E6E200DE2A90 /* TimeTableCell.swift */,
+				183BF4AA24D2E6E200DE2A90 /* TimeTableCell.xib */,
 			);
-			path = MonthTableCell;
+			path = TimeTableCell;
 			sourceTree = "<group>";
 		};
-		183BF4AE24D2E94100DE2A90 /* TimeCollectionCell */ = {
+		183BF4AE24D2E94100DE2A90 /* DayCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				183BF4AF24D2E98E00DE2A90 /* TimeCollectionCell.swift */,
-				183BF4B024D2E98E00DE2A90 /* TimeCollectionCell.xib */,
+				183BF4AF24D2E98E00DE2A90 /* DayCollectionCell.swift */,
+				183BF4B024D2E98E00DE2A90 /* DayCollectionCell.xib */,
 			);
-			path = TimeCollectionCell;
+			path = DayCollectionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +279,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				183BF48024D2D9AE00DE2A90 /* LaunchScreen.storyboard in Resources */,
-				183BF4B224D2E98E00DE2A90 /* TimeCollectionCell.xib in Resources */,
-				183BF4AC24D2E6E200DE2A90 /* MonthTableCell.xib in Resources */,
+				183BF4B224D2E98E00DE2A90 /* DayCollectionCell.xib in Resources */,
+				183BF4AC24D2E6E200DE2A90 /* TimeTableCell.xib in Resources */,
 				183BF47D24D2D9AE00DE2A90 /* Assets.xcassets in Resources */,
 				183BF47B24D2D97700DE2A90 /* Main.storyboard in Resources */,
 			);
@@ -296,10 +308,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				183BF47424D2D97700DE2A90 /* AppDelegate.swift in Sources */,
+				18A0C8C024DBE6B50017776A /* RepeatTableController.swift in Sources */,
 				18856A1924D6F6B8003206A0 /* AlertSettingsTableController.swift in Sources */,
-				18CE536324D3F1F30098D827 /* MonthViewController.swift in Sources */,
-				183BF4B124D2E98E00DE2A90 /* TimeCollectionCell.swift in Sources */,
-				183BF4AB24D2E6E200DE2A90 /* MonthTableCell.swift in Sources */,
+				18A0C8BE24DBD0EF0017776A /* EndRepeatTableController.swift in Sources */,
+				18CE536324D3F1F30098D827 /* WeekViewController.swift in Sources */,
+				183BF4B124D2E98E00DE2A90 /* DayCollectionCell.swift in Sources */,
+				18A0C8C224DBFC020017776A /* AlarmTableController.swift in Sources */,
+				18D44A6C24D7EB2400F00DBE /* Time.swift in Sources */,
+				183BF4AB24D2E6E200DE2A90 /* TimeTableCell.swift in Sources */,
 				183BF4A824D2E68E00DE2A90 /* MonthsTableController.swift in Sources */,
 				183BF47624D2D97700DE2A90 /* SceneDelegate.swift in Sources */,
 			);
