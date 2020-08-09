@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AlertSettingsTableController: UITableViewController {
 
@@ -22,7 +23,32 @@ class AlertSettingsTableController: UITableViewController {
 
         startDatePicker.isHidden = true
         endDatePicker.isHidden = true
-        startAlertLabel.text = "\(Calendar.current.monthSymbols[currentMonth]) \(currentWeekDay), \(currentYear) 6:00 PM"
+        startAlertLabel.text = "\(Calendar.current.monthSymbols[currentMonth]) \(currentWeekDay), \(currentYear) \(hour)"
+        
+        //build model array to hold alerts.
+        //this is to be used only in case of alarm setting
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            
+        }
+        //this is to be used only in case of alarm setting
+        //otherwise, write it as an entry in a table
+        let alertContent = UNMutableNotificationContent()
+        alertContent.title = alert?.eventName ?? ""
+        alertContent.body = "You have schedueled an event"
+        
+        let date:Date? = alert?.startTime//(alert?.alarm)//ToDo worked once! for alert?.startTime why not this way? why once?
+        
+        guard let givenDate = date else {return}
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: givenDate)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: alertContent, trigger: trigger)
+        center.add(request) { (error) in
+            
+        }
     }
     
     //MARK: alert building functions
@@ -127,6 +153,12 @@ class AlertSettingsTableController: UITableViewController {
         
         if indexPath.row == 6 {
             showEndRepeatTable()
+            return
+        }
+        
+        if indexPath.row == 7 {
+            guard let timeTableController = storyboard?.instantiateViewController(withIdentifier: "TravelTime") else { return }
+            navigationController?.pushViewController(timeTableController, animated: true)
             return
         }
         

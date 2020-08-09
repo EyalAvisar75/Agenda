@@ -21,7 +21,7 @@ class MyAlert:Codable {
     var repeating:String?
     var endRepeat:Date?
     var travelTime:Int?
-    var alert:Int?
+    var alarm:Date?
     
     init() {}
     
@@ -32,7 +32,7 @@ class MyAlert:Codable {
 
 var alert:MyAlert?
 let now = Date()
-let components = Calendar.current.dateComponents([.month, .day, .year, .weekday], from: now)
+let components = Calendar.current.dateComponents([.month, .day, .year, .weekday, .hour], from: now)
 
 let month = components.month!
 let monthStr = Calendar.current.monthSymbols[month - 1]
@@ -41,6 +41,7 @@ let year = components.year!
 let weekDay = components.weekday!
 var currentWeekDay = weekDay
 let day = components.day!
+let hour = components.hour!
 var currentMonth = month
 var currentYear = year
 

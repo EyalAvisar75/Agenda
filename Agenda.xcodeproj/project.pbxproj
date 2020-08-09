@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18215FFD24DD442E001A9866 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18215FFC24DD442E001A9866 /* EventsViewController.swift */; };
+		182A01C324DEDABC00F1025F /* TravelTimeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182A01C224DEDABC00F1025F /* TravelTimeTableController.swift */; };
 		183BF47424D2D97700DE2A90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF47324D2D97700DE2A90 /* AppDelegate.swift */; };
 		183BF47624D2D97700DE2A90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF47524D2D97700DE2A90 /* SceneDelegate.swift */; };
 		183BF47B24D2D97700DE2A90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183BF47924D2D97700DE2A90 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18215FFC24DD442E001A9866 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		182A01C224DEDABC00F1025F /* TravelTimeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeTableController.swift; sourceTree = "<group>"; };
 		183BF47024D2D97700DE2A90 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183BF47324D2D97700DE2A90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		183BF47524D2D97700DE2A90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,12 +129,14 @@
 				183BF47524D2D97700DE2A90 /* SceneDelegate.swift */,
 				183BF4A724D2E68E00DE2A90 /* MonthsTableController.swift */,
 				18CE536224D3F1F30098D827 /* WeekViewController.swift */,
+				18215FFC24DD442E001A9866 /* EventsViewController.swift */,
 				18856A1824D6F6B8003206A0 /* AlertSettingsTableController.swift */,
 				18A0C8BF24DBE6B50017776A /* RepeatTableController.swift */,
 				18A0C8BD24DBD0EF0017776A /* EndRepeatTableController.swift */,
 				18A0C8C124DBFC020017776A /* AlarmTableController.swift */,
 				18D44A6B24D7EB2400F00DBE /* Time.swift */,
 				183BF47924D2D97700DE2A90 /* Main.storyboard */,
+				182A01C224DEDABC00F1025F /* TravelTimeTableController.swift */,
 				183BF47C24D2D9AE00DE2A90 /* Assets.xcassets */,
 				183BF47E24D2D9AE00DE2A90 /* LaunchScreen.storyboard */,
 				183BF48124D2D9AE00DE2A90 /* Info.plist */,
@@ -308,10 +314,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				183BF47424D2D97700DE2A90 /* AppDelegate.swift in Sources */,
+				182A01C324DEDABC00F1025F /* TravelTimeTableController.swift in Sources */,
 				18A0C8C024DBE6B50017776A /* RepeatTableController.swift in Sources */,
 				18856A1924D6F6B8003206A0 /* AlertSettingsTableController.swift in Sources */,
 				18A0C8BE24DBD0EF0017776A /* EndRepeatTableController.swift in Sources */,
 				18CE536324D3F1F30098D827 /* WeekViewController.swift in Sources */,
+				18215FFD24DD442E001A9866 /* EventsViewController.swift in Sources */,
 				183BF4B124D2E98E00DE2A90 /* DayCollectionCell.swift in Sources */,
 				18A0C8C224DBFC020017776A /* AlarmTableController.swift in Sources */,
 				18D44A6C24D7EB2400F00DBE /* Time.swift in Sources */,

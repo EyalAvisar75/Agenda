@@ -9,14 +9,18 @@
 import UIKit
 
 class WeekViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TimeCollectionCellDelegate {
-    
+    //check how to add another table as a child and how to fix it with its own datasource/delegate
 
-    @IBOutlet weak var monthTable: UITableView!
+    @IBOutlet weak var monthTable: UITableView! //actually a week table
+    
+    let childEventTable = EventsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAlert))
+        
+        addTableEventController()
         
         monthTable.delegate = self
         monthTable.dataSource = self
@@ -26,7 +30,14 @@ class WeekViewController: UIViewController, UITableViewDataSource, UITableViewDe
         TimeUnit.unit = 7
     }
     
-    
+    func addTableEventController() {
+        addChild(childEventTable)
+        view.addSubview(childEventTable.view)
+        
+        childEventTable.view.frame = CGRect(x: 0, y: Double(view.frame.size.height / 4), width: Double(view.frame.size.width), height: Double(view.frame.size.height)/4 * 3)
+        childEventTable.didMove(toParent: self)
+        
+    }
     @objc func addAlert() {
         guard let monthView  = storyboard?.instantiateViewController(withIdentifier: "AlertSettings") else { return }
         
